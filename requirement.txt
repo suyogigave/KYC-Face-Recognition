@@ -8,3 +8,4 @@ pdf2image
 Pillow
 cmake
 dlib
+https://github.com/ageitgey/face_recognition_models/releases/download/v0.3.0/dlib-19.24.0-cp39-cp39-manylinux1_x86_64.whl
