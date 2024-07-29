@@ -19,7 +19,7 @@ def allowed_file(filename):
 def upload_form():
     return render_template('upload.html')
 
-@app.route('/upload', methods=['POST'])
+@app.route('/kycupload', methods=['POST'])
 def upload_file():
     if 'adhar' not in request.files or 'image' not in request.files:
         print('No file part in request')
@@ -116,7 +116,3 @@ def cleanup_upload_folder():
     except Exception as e:
         print(f'Error cleaning up upload folder: {str(e)}')
 
-if __name__ == '__main__':
-    if not os.path.exists(app.config['UPLOAD_FOLDER']):
-        os.makedirs(app.config['UPLOAD_FOLDER'])
-    app.run(debug=True)
