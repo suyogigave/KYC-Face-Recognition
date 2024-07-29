@@ -1,4 +1,4 @@
-setuptools
+setuptools==58.2.0
 wheel
 Flask
 flask-cors
