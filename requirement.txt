@@ -1,5 +1,5 @@
 setuptools<72.0.0
-wheel
+--upgrade setuptools wheel
 Flask
 flask-cors
 face_recognition
