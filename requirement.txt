@@ -1,3 +1,5 @@
+cmake
+dlib
 setuptools
 wheel
 Flask
