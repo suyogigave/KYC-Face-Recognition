@@ -13,6 +13,6 @@ MarkupSafe==2.1.5
 numpy==1.26.4
 pdf2image==1.17.0
 pillow==10.4.0
-setuptools==71.1.0
+setuptools
 Werkzeug==3.0.3
 gunicorn
