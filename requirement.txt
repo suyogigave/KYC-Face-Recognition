@@ -16,3 +16,4 @@ pillow==10.4.0
 setuptools
 Werkzeug==3.0.3
 gunicorn
+wheel
