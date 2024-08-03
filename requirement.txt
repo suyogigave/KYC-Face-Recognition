@@ -2,7 +2,7 @@ blinker==1.8.2
 click==8.1.7
 colorama==0.4.6
 cmake==3.25.2
-dlib==19.24.2
+dlib
 face-recognition==1.3.0
 face_recognition_models==0.3.0
 Flask==3.0.3
