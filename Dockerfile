@@ -19,4 +19,5 @@ RUN apt-get update && apt-get install -y \
 COPY . /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r
+RUN pip install --no-cache-dir -r requirement.txt
+
