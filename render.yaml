@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: KYC
+    env: docker
+    dockerfilePath: Dockerfile
+    numInstances: 1
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_APP
+        value: app.py
