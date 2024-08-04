@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
+import os
 
 import face_recognition
 from werkzeug.utils import secure_filename
