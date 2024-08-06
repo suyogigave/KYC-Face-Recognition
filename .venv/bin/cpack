@@ -1,4 +1,4 @@
-#!/Users/ayushparida/Desktop/research/KYC-Face-Recognition/.venv/bin/python3
+#!/Users/ayushparida/Desktop/research/KYC-Face-Recognition/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
