@@ -117,3 +117,5 @@ def cleanup_upload_folder():
     except Exception as e:
         print(f'Error cleaning up upload folder: {str(e)}')
 
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80)
