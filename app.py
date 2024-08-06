@@ -23,7 +23,7 @@ def upload_form():
 @app.route('/kycupload', methods=['POST'])
 def upload_file():
     if 'adhar' not in request.files or 'image' not in request.files:
-        print('No file part in request)
+        print('No file part in request')
         return jsonify({'result': 'Error: No file part'}), 400
 
     adhar_file = request.files['adhar']
