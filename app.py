@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
 import os
-
 import face_recognition
 from werkzeug.utils import secure_filename
 from pdf2image import convert_from_path
@@ -12,6 +11,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'png', 'jpg', 'jpeg'}
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5 MB limit
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
@@ -22,6 +22,10 @@ def upload_form():
 
 @app.route('/kycupload', methods=['POST'])
 def upload_file():
+    if request.content_length > app.config['MAX_CONTENT_LENGTH']:
+        print('File size exceeds limit, Please upload file less than 5MB')
+        return jsonify({'result': 'Error: File size exceeds limit'}), 400
+
     if 'adhar' not in request.files or 'image' not in request.files:
         print('No file part in request')
         return jsonify({'result': 'Error: No file part'}), 400
