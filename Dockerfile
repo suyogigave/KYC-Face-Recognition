@@ -21,3 +21,9 @@ COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirement.txt
+
+# Expose the port that the app runs on
+EXPOSE 5000
+
+# Start app.py when the container launches
+CMD ["python", "app.py"]
