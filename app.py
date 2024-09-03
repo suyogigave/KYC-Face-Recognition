@@ -16,12 +16,11 @@ app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5 MB limit
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
-@app.route('/status', methods=['GET'])
-def server_status():
-    return jsonify({'message': 'Server is Running'}), 200
-
 @app.route('/')
 def upload_form():
+    # Return a JSON message if the request is an API call
+    if request.headers.get('Accept') == 'application/json':
+        return jsonify({'message': 'Server is Running'}), 200
     return render_template('upload.html')
 
 @app.route('/kycupload', methods=['POST'])
